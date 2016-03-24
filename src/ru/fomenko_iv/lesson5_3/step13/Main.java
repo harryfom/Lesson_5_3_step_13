@@ -24,9 +24,20 @@ Sample Output 3:
 -981.889000
  */
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("5.3 Потоки символов – Шаг 13");
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.StreamTokenizer;
 
+public class Main {
+    public static void main(String[] args) throws IOException {
+        System.out.println("5.3 Потоки символов – Шаг 13");
+        StreamTokenizer streamTokenizer = new StreamTokenizer(new BufferedInputStream(System.in));
+        int ttype;
+        String str;
+        while ((ttype = streamTokenizer.nextToken()) != StreamTokenizer.TT_EOF){
+            if (ttype == StreamTokenizer.TT_NUMBER){
+                System.out.println(streamTokenizer.nval);
+            }
+        }
     }
 }
