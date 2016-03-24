@@ -30,9 +30,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        System.out.println("5.3 Потоки символов – Шаг 13");
-//        StringReader inputStream = new StringReader("1 2 3");
-//        Scanner scanner = new Scanner(inputStream);
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.ENGLISH);
         double d;
@@ -40,12 +37,10 @@ public class Main {
         while (scanner.hasNext()) {
             if (scanner.hasNextDouble()) {
                 d = scanner.nextDouble();
-//                System.out.println(d);
                 sum += d;
             } else {
                 scanner.next();
             }
-
         }
         System.out.printf(Locale.ENGLISH, "%.6f", sum);
     }
