@@ -24,20 +24,24 @@ Sample Output 3:
 -981.889000
  */
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.StreamTokenizer;
+import java.io.*;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         System.out.println("5.3 Потоки символов – Шаг 13");
-        StreamTokenizer streamTokenizer = new StreamTokenizer(new BufferedInputStream(System.in));
-        int ttype;
-        String str;
-        while ((ttype = streamTokenizer.nextToken()) != StreamTokenizer.TT_EOF){
-            if (ttype == StreamTokenizer.TT_NUMBER){
-                System.out.println(streamTokenizer.nval);
-            }
+        StringReader inputStream = new StringReader("-1e3\n18 .111 11bbb");
+        Scanner scanner = new Scanner(inputStream);
+        scanner.useLocale(Locale.ENGLISH);
+        double d;
+        double sum = 0.0;
+        while (scanner.hasNextDouble()){
+            d = scanner.nextDouble();
+            System.out.println(d);
+            sum+=d;
         }
+
+        System.out.printf(Locale.ENGLISH,"%.6f",sum);
     }
 }
